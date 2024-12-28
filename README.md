@@ -87,7 +87,7 @@ EpiAgent uses a unified set of **candidate cis-regulatory elements (cCREs)** as 
 4. **TF-IDF and Tokenization:**
    - Perform global TF-IDF to assign importance to accessible cCREs, followed by tokenization to generate cell sentences.
 
-For a detailed example, refer to the demo notebook: [Data Preprocessing.ipynb](https://github.com/xy-chen16/EpiAgent/demo/Data%20Preprocessing.ipynb).
+For a detailed example, refer to the demo notebook: [Data Preprocessing.ipynb](https://github.com/xy-chen16/EpiAgent/blob/main/demo/Data%20Preprocessing.ipynb).
 
 ---
 
@@ -95,14 +95,14 @@ For a detailed example, refer to the demo notebook: [Data Preprocessing.ipynb](h
 
 ### Feature Extraction
 - Pretrained EpiAgent model parameters and example files are available [here](https://drive.google.com/drive/folders/1WlNykSCNtZGsUp2oG0dw3cDdVKYDR-iX?usp=sharing).
-- A demo for zero-shot feature extraction is available in [Zero-shot Feature Extraction using EpiAgent.ipynb](https://github.com/xy-chen16/EpiAgent/demo/Zero-shot%20Feature%20Extraction%20using%20EpiAgent.ipynb).
+- A demo for zero-shot feature extraction is available in [Zero-shot Feature Extraction using EpiAgent.ipynb](https://github.com/xy-chen16/EpiAgent/blob/main/demo/Zero-shot%20Feature%20Extraction%20using%20EpiAgent.ipynb).
 
 ### Direct Cell Type Annotation
 
 Two supervised models, **EpiAgent-B** and **EpiAgent-NT**, are designed for direct cell type annotation. These models and their example datasets can be downloaded [here](https://drive.google.com/drive/folders/1WlNykSCNtZGsUp2oG0dw3cDdVKYDR-iX?usp=sharing). For specific demos:
 
-- Annotating brain cell datasets with **EpiAgent-B**: [Zero-shot annotation using EpiAgent-B.ipynb](https://github.com/xy-chen16/EpiAgent/demo/Zero-shot%20annotation%20using%20EpiAgent-B.ipynb)
-- Annotating other tissue datasets with **EpiAgent-NT**: [Zero-shot annotation using EpiAgent-NT.ipynb](https://github.com/xy-chen16/EpiAgent/demo/Zero-shot%20annotation%20using%20EpiAgent-NT.ipynb)
+- Annotating brain cell datasets with **EpiAgent-B**: [Zero-shot annotation using EpiAgent-B.ipynb](https://github.com/xy-chen16/EpiAgent/blob/main/demo/Zero-shot%20annotation%20using%20EpiAgent-B.ipynb)
+- Annotating other tissue datasets with **EpiAgent-NT**: [Zero-shot annotation using EpiAgent-NT.ipynb](https://github.com/xy-chen16/EpiAgent/blob/main/demo/Zero-shot%20annotation%20using%20EpiAgent-NT.ipynb)
 
 ### Other tasks
 - **Data Imputation**
