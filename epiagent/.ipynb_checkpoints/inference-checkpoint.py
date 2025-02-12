@@ -96,7 +96,7 @@ def infer_cell_types(model, device, dataloader, need_cell_embeddings=True):
     # Prepare the result dictionary
     results = {
         'predicted_probabilities': predicted_probabilities,
-        'predicted_labels': predicted_classes
+        'predicted_labeles': predicted_classes
     }
     if need_cell_embeddings:
         results['cell_embeddings'] = np.array(cell_embeddings)

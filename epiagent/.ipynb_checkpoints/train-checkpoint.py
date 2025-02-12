@@ -2,6 +2,7 @@ import os
 import torch
 import logging
 import numpy as np
+import torch.nn.functional as F
 from torch.cuda.amp import autocast, GradScaler
 from torch.optim.lr_scheduler import LambdaLR
 from sklearn.metrics import roc_auc_score, average_precision_score
