@@ -88,7 +88,7 @@ EpiAgent uses a unified set of **candidate cis-regulatory elements (cCREs)** as 
 4. **TF-IDF and Tokenization:**
    - Perform global TF-IDF to assign importance to accessible cCREs, followed by tokenization to generate cell sentences.
 
-For a detailed example, refer to the demo notebook: [Data Preprocessing.ipynb](https://github.com/xy-chen16/EpiAgent/demo/Data%20Preprocessing.ipynb).
+For a detailed example, refer to the demo notebook: [Data Preprocessing.ipynb](https://github.com/xy-chen16/EpiAgent/blob/main/demo/Data%20Preprocessing.ipynb).
 
 ---
 
@@ -97,24 +97,24 @@ For a detailed example, refer to the demo notebook: [Data Preprocessing.ipynb](h
 ### Zero-shot unsupervised feature extraction with the pretrained EpiAgent model
 
 - Pretrained EpiAgent model parameters and example files are available [here](https://drive.google.com/drive/folders/1WlNykSCNtZGsUp2oG0dw3cDdVKYDR-iX?usp=sharing).
-- A demo for zero-shot feature extraction is available in [Zero-shot Feature Extraction using EpiAgent.ipynb](https://github.com/xy-chen16/EpiAgent/demo/Zero-shot%20Feature%20Extraction%20using%20EpiAgent.ipynb).
+- A demo for zero-shot feature extraction is available in [Zero-shot Feature Extraction using EpiAgent.ipynb](https://github.com/xy-chen16/EpiAgent/blob/main/demo/Zero-shot%20Feature%20Extraction%20using%20EpiAgent.ipynb).
 
 ### Fine-tuning EpiAgent for unsupervised feature extraction
 
 - Pretrained EpiAgent model parameters and example files are available [here](https://drive.google.com/drive/folders/1WlNykSCNtZGsUp2oG0dw3cDdVKYDR-iX?usp=sharing).
-- A demo for fine-tuning EpiAgent for unsupervised feature extraction is available in [Fine-tuning EpiAgent for Unsupervised Feature Extraction.ipynb](https://github.com/xy-chen16/EpiAgent/blob/main/demo/Fine-tuning%20EpiAgent%20for%20Unsupervised%20Feature%20Extraction.ipynb).
+- A demo for fine-tuning EpiAgent for unsupervised feature extraction is available in [Fine-tuning EpiAgent for Unsupervised Feature Extraction.ipynb](https://github.com/xy-chen16/EpiAgent/blob/main/demo/Fine-tuning%20EpiAgent%20for%20unsupervised%20feature%20extraction.ipynb).
 
 ### Fine-tuning EpiAgent for supervised cell type annotation
 
 - Pretrained EpiAgent model parameters and example files are available [here](https://drive.google.com/drive/folders/1WlNykSCNtZGsUp2oG0dw3cDdVKYDR-iX?usp=sharing).
-- A demo for fine-tuning EpiAgent for supervised cell type annotation is available in [Fine-tuning EpiAgent for Supervised Cell Type Annotation.ipynb](https://github.com/xy-chen16/EpiAgent/blob/main/demo/Fine-tuning%20EpiAgent%20for%20Supervised%20Cell%20Type%20Annotation.ipynb).
+- A demo for fine-tuning EpiAgent for supervised cell type annotation is available in [Fine-tuning EpiAgent for Supervised Cell Type Annotation.ipynb](https://github.com/xy-chen16/EpiAgent/blob/main/demo/Fine-tuning%20EpiAgent%20for%20supervised%20cell%20type%20annotation.ipynb).
 
 ### Zero-shot cell type annotation with EpiAgent-B and EpiAgent-NT
 
 Two supervised models, **EpiAgent-B** and **EpiAgent-NT**, are designed for direct cell type annotation. These models and their example datasets can be downloaded [here](https://drive.google.com/drive/folders/1WlNykSCNtZGsUp2oG0dw3cDdVKYDR-iX?usp=sharing). For specific demos:
 
-- Annotating brain cell datasets with **EpiAgent-B**: [Zero-shot annotation using EpiAgent-B.ipynb](https://github.com/xy-chen16/EpiAgent/demo/Zero-shot%20annotation%20using%20EpiAgent-B.ipynb)
-- Annotating other tissue datasets with **EpiAgent-NT**: [Zero-shot annotation using EpiAgent-NT.ipynb](https://github.com/xy-chen16/EpiAgent/demo/Zero-shot%20annotation%20using%20EpiAgent-NT.ipynb)
+- Annotating brain cell datasets with **EpiAgent-B**: [Zero-shot annotation using EpiAgent-B.ipynb](https://github.com/xy-chen16/EpiAgent/blob/main/demo/Zero-shot%20annotation%20using%20EpiAgent-B.ipynb)
+- Annotating other tissue datasets with **EpiAgent-NT**: [Zero-shot annotation using EpiAgent-NT.ipynb](https://github.com/xy-chen16/EpiAgent/blob/main/demo/Zero-shot%20annotation%20using%20EpiAgent-NT.ipynb)
 
 ### Other tasks
 - **Data Imputation**
