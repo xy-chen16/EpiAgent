@@ -14,6 +14,7 @@ Large-scale foundation models have recently opened new avenues for artificial ge
 - **2024.12.27**: Source code and Python package released on PyPI under the name `epiagent` (v0.0.1). Install it via `pip install epiagent`.
 - **2024.12.28**: Updated GitHub repository with pretrained EpiAgent model and two supervised models for cell type annotation: EpiAgent-B and EpiAgent-NT. Models and example datasets can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1WlNykSCNtZGsUp2oG0dw3cDdVKYDR-iX?usp=sharing). Additionally, we added usage demos for zero-shot applications ([link](https://github.com/xy-chen16/EpiAgent/tree/main/demo/)).
 - **2025.02.12**: Updated the `epiagent` PyPI package to version **0.0.2**, adding fine-tuning code for unsupervised feature extraction and supervised cell type annotation. We also provided demos of the fine-tuning code, available [here](https://github.com/xy-chen16/EpiAgent/tree/main/demo/).
+- **2025.03.03**: Updated the `epiagent` PyPI package to version **0.0.3**. This release includes new fine-tuning code for: a) data imputation, b) reference data integration and query data mapping, and c) cellular response prediction of out-of-sample stimulated perturbation. In addition, several bugs in the previous version have been fixed. Demo notebooks for fine-tuning EpiAgent for data imputation and for reference data integration and query data mapping are available [here](https://github.com/xy-chen16/EpiAgent/tree/main/demo/).
 
 ---
 
@@ -108,6 +109,16 @@ For a detailed example, refer to the demo notebook: [Data Preprocessing.ipynb](h
 
 - Pretrained EpiAgent model parameters and example files are available [here](https://drive.google.com/drive/folders/1WlNykSCNtZGsUp2oG0dw3cDdVKYDR-iX?usp=sharing).
 - A demo for fine-tuning EpiAgent for supervised cell type annotation is available in [Fine-tuning EpiAgent for Supervised Cell Type Annotation.ipynb](https://github.com/xy-chen16/EpiAgent/blob/main/demo/Fine-tuning%20EpiAgent%20for%20supervised%20cell%20type%20annotation.ipynb).
+
+### Data Imputation
+
+- Pretrained EpiAgent model parameters and example files are available [here](https://drive.google.com/drive/folders/1WlNykSCNtZGsUp2oG0dw3cDdVKYDR-iX?usp=sharing).
+- A demo for fine-tuning EpiAgent for data imputation is available in [Fine-tuning EpiAgent for Data Imputation.ipynb](https://github.com/xy-chen16/EpiAgent/blob/main/demo/Fine-tuning%20EpiAgent%20for%20data%20imputation.ipynb).
+
+### Reference Data Integration and Query Data Mapping
+
+- Pretrained EpiAgent model parameters and example files are available [here](https://drive.google.com/drive/folders/1WlNykSCNtZGsUp2oG0dw3cDdVKYDR-iX?usp=sharing).
+- A demo for fine-tuning EpiAgent for reference data integration and query data mapping is available in [Fine-tuning EpiAgent for Reference Data Integration and Query Data Mapping.ipynb](https://github.com/xy-chen16/EpiAgent/blob/main/demo/Fine-tuning%20EpiAgent%20for%20reference%20data%20integration%20and%20query%20data%20mapping.ipynb).
 
 ### Zero-shot cell type annotation with EpiAgent-B and EpiAgent-NT
 

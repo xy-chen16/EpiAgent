@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="epiagent",
-    version="0.0.2",
+    version="0.0.3",
     description="Foundation model for single-cell epigenomic data.",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
@@ -20,6 +20,8 @@ setup(
         "torch>=2.0.0",  # PyTorch: Installation details in README.md
         "transformers",
         "anndata",
+        "POT>=0.9.2",
+        "faiss",
         "flash-attn>=2.5.7"  # Flash-Attention: Installation details in README.md
     ],
     classifiers=[

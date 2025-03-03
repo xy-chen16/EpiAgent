@@ -3,7 +3,7 @@ import pandas as pd
 from anndata import AnnData
 
 
-def tokenization(adata: AnnData):
+def tokenization(adata: AnnData, num_cCREs=1355445):
     """
     Tokenization function for an AnnData object.
 
@@ -19,8 +19,8 @@ def tokenization(adata: AnnData):
         ValueError: If `adata.X` is not in the expected sparse matrix format.
     """
     # Step 1: Check the number of features in adata.X
-    if adata.shape[1] != 1355445:
-        raise ValueError("Feature dimensions are not 1355445. Please ensure you are using EpiAgent-required cCREs.")
+    if adata.shape[1] != num_cCREs:
+        raise ValueError(f"Feature dimensions are not {num_cCREs}. Please ensure you are using EpiAgent-required cCREs.")
 
     # Step 2: Check if the data is continuous (TF-IDF applied)
     if not np.issubdtype(adata.X.dtype, np.floating):
