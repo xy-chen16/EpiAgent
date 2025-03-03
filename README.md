@@ -128,9 +128,7 @@ Two supervised models, **EpiAgent-B** and **EpiAgent-NT**, are designed for dire
 - Annotating other tissue datasets with **EpiAgent-NT**: [Zero-shot annotation using EpiAgent-NT.ipynb](https://github.com/xy-chen16/EpiAgent/blob/main/demo/Zero-shot%20annotation%20using%20EpiAgent-NT.ipynb)
 
 ### Other tasks
-- **Data Imputation**
 - **Prediction of Cellular Responses to Stimulations and Genetic Perturbations**
-- **Reference Data Integration and Query Data Mapping**
 - **In-silico Treatment Simulations**
 
 Fine-tuning and additional code demos will be updated soon.
