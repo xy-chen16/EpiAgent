@@ -15,6 +15,7 @@ Large-scale foundation models have recently opened new avenues for artificial ge
 - **2024.12.28**: Updated GitHub repository with pretrained EpiAgent model and two supervised models for cell type annotation: EpiAgent-B and EpiAgent-NT. Models and example datasets can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1WlNykSCNtZGsUp2oG0dw3cDdVKYDR-iX?usp=sharing). Additionally, we added usage demos for zero-shot applications ([link](https://github.com/xy-chen16/EpiAgent/tree/main/demo/)).
 - **2025.02.12**: Updated the `epiagent` PyPI package to version **0.0.2**, adding fine-tuning code for unsupervised feature extraction and supervised cell type annotation. We also provided demos of the fine-tuning code, available [here](https://github.com/xy-chen16/EpiAgent/tree/main/demo/).
 - **2025.03.03**: Updated the `epiagent` PyPI package to version **0.0.3**. This release includes new fine-tuning code for: a) data imputation, b) reference data integration and query data mapping, and c) cellular response prediction of out-of-sample stimulated perturbation. In addition, several bugs in the previous version have been fixed. Demo notebooks for fine-tuning EpiAgent for data imputation and for reference data integration and query data mapping are available [here](https://github.com/xy-chen16/EpiAgent/tree/main/demo/).
+- **2025.05.22**: Demo notebooks for fine-tuning EpiAgent for perturbation prediction and for in-silico cCRE KO are available [here](https://github.com/xy-chen16/EpiAgent/tree/main/demo/).
 
 ---
 
@@ -127,11 +128,12 @@ Two supervised models, **EpiAgent-B** and **EpiAgent-NT**, are designed for dire
 - Annotating brain cell datasets with **EpiAgent-B**: [Zero-shot annotation using EpiAgent-B.ipynb](https://github.com/xy-chen16/EpiAgent/blob/main/demo/Zero-shot%20annotation%20using%20EpiAgent-B.ipynb)
 - Annotating other tissue datasets with **EpiAgent-NT**: [Zero-shot annotation using EpiAgent-NT.ipynb](https://github.com/xy-chen16/EpiAgent/blob/main/demo/Zero-shot%20annotation%20using%20EpiAgent-NT.ipynb)
 
-### Other tasks
-- **Prediction of Cellular Responses to Stimulations and Genetic Perturbations**
-- **In-silico Treatment Simulations**
+### Prediction of Cellular Responses to Perturbations
+- A demo for fine-tuning EpiAgent for prediction of cellular responses to perturbations is available in: [Fine-tuning EpiAgent for perturbation prediction.ipynb](https://github.com/xy-chen16/EpiAgent/blob/main/demo/Fine-tuning%20EpiAgent%20for%20perturbation%20prediction.ipynb)
 
-Fine-tuning and additional code demos will be updated soon.
+### In-silico cCRE KO
+- A demo for fine-tuning EpiAgent for in-silico cCRE KO is available in [In-silico cCRE KO.ipynb](https://github.com/xy-chen16/EpiAgent/blob/main/demo/In-silico%20cCRE%20KO.ipynb)
+
 
 ---
 
