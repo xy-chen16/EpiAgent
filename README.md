@@ -19,8 +19,7 @@ Although single-cell assay for transposase-accessible chromatin using sequencing
 - **2025.05.22**: Demo notebooks for fine-tuning EpiAgent for perturbation prediction and for in-silico cCRE KO are available [here](https://github.com/xy-chen16/EpiAgent/tree/main/demo/).
 - **2025.08.09**: **EpiAgent** has been officially accepted for publication in Nature Methods! 🎉
 - **2025.09.09**: Released the full database used for pretraining and downstream applications as the ensemble resource Human-scATAC-Corpus, comprising >5.4 million cells across 37 tissue or cell lines. The database is publicly available at [health.tsinghua.edu.cn/human-scatac-corpus](https://health.tsinghua.edu.cn/human-scatac-corpus).
-- **2025.09.25**: Our paper has been officially **published online in [Nature Methods](https://www.nature.com/articles/s41592-025-02822-z)** 🎉.  
-  Meanwhile, the preprint of our database **Human-scATAC-Corpus** is now available on **[bioRxiv](https://www.biorxiv.org/content/10.1101/2025.09.05.674505v1)**.
+- **2025.09.25**: Our paper has been officially **published online in [Nature Methods]** 🎉 ([link](https://www.nature.com/articles/s41592-025-02822-z)). Meanwhile, the preprint of our database **Human-scATAC-Corpus** is now available on bioRxiv. Read the preprint [here](https://www.biorxiv.org/content/10.1101/2025.09.05.674505v1).
 ---
 
 ## Installation
