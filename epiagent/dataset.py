@@ -1348,3 +1348,86 @@ def collate_fn_for_RDI_test(data):
     batch_labels_batch = torch.stack(batch_labels_list)
 
     return padded_cells_batch, batch_labels_batch
+
+
+
+class TrainCellDatasetForPT(Dataset):
+    def __init__(self, adata,alpha_for_match=1, max_cell_length=8192,peak_num=1355445, is_random=True, pert_to_index=None):# ATAC_matrix
+        self.cell_indeces = [np.fromstring(instance.strip('[]'), sep=',') for instance in adata.obs['cell_indices']]
+        self.predicted_cell_indeces = [np.fromstring(instance.strip('[]'), sep=',') for instance in adata.obs['predicted_cell_indices']]
+        self.condition = adata.obs['perturbation'].tolist()
+        self.max_cell_length = max_cell_length
+        self.is_random = is_random
+        self.alpha_for_match = alpha_for_match
+        self.peak_num = peak_num
+        self.pert_to_index = pert_to_index
+        self.adata = adata
+    def __len__(self):
+        return len(self.cell_indeces)
+
+    def __getitem__(self, idx):
+        cell = np.array(self.cell_indeces[idx],dtype=int)
+        predicted_cell = np.array(self.predicted_cell_indeces[idx],dtype=int)
+        nonopen_index = np.ones(self.peak_num, dtype=bool)
+        nonopen_index[np.array(predicted_cell)-4] = False
+        cell_nonopen_indices = np.array(np.arange(self.peak_num)+4)[nonopen_index]
+        FP_cell = np.random.choice(cell_nonopen_indices, int((min(len(predicted_cell),self.max_cell_length-2))*self.alpha_for_match))
+        ex_cell_for_match = np.concatenate([predicted_cell, FP_cell])
+        TF_ids_for_match = np.concatenate([np.ones_like(predicted_cell), np.zeros_like(FP_cell)])
+        
+        signals = self.adata[idx].X.toarray().reshape(-1)
+        if len(cell) > self.max_cell_length-2:
+            if self.is_random:
+                index = np.sort(np.random.choice(list(range(len(cell))), self.max_cell_length-2))
+                cell = cell[index]
+            else:
+                cell = cell[:self.max_cell_length-2]
+
+        if 'control_mapping_to' in self.condition[idx]:
+            pert = self.condition[idx].split('_')[-1]
+            cell = [self.peak_num+4+self.pert_to_index[pert]]+cell.tolist()+[2]
+        else:
+            cell = [1]+cell.tolist()+[2]
+        return torch.tensor(cell,dtype=torch.long),torch.tensor(signals,dtype=torch.float32),torch.tensor(ex_cell_for_match,dtype=torch.long),TF_ids_for_match
+        
+def collate_fn_for_PT_train(data):
+    max_len = max([len(row[0]) for row in data])
+    padded_data = [torch.nn.functional.pad(torch.LongTensor(row[0]), pad=(0, max_len-len(row[0])), mode='constant', value=0) for row in data]
+    stacked_data = torch.stack(padded_data)
+    
+    return stacked_data,torch.stack([row[1] for row in data]),[row[2] for row in data],torch.tensor(np.concatenate([row[3] for row in data]),dtype=torch.float)
+
+class TestCellDatasetForPT(Dataset):
+    def __init__(self, adata, max_cell_length=8192,peak_num=1355445, is_random=False, pert_to_index=None):
+        self.cell_indeces = [np.fromstring(instance.strip('[]'), sep=',') for instance in adata.obs['cell_indices']]
+        self.condition = adata.obs['perturbation'].tolist()
+        self.max_cell_length = max_cell_length
+        self.is_random = is_random
+        self.peak_num = peak_num
+        self.pert_to_index = pert_to_index
+        
+    def __len__(self):
+        return len(self.cell_indeces)
+
+    def __getitem__(self, idx):
+        cell = np.array(self.cell_indeces[idx],dtype=int)
+        if len(cell) > self.max_cell_length-2:
+            if self.is_random:
+                index = np.sort(np.random.choice(list(range(len(cell))), self.max_cell_length-2))
+                cell = cell[index]
+            else:
+                cell = cell[:self.max_cell_length-2]
+        if 'control_mapping_to' in self.condition[idx]:
+            pert = self.condition[idx].split('_')[-1]
+            cell = [self.peak_num+4+self.pert_to_index[pert]]+cell.tolist()+[2]
+        else:
+            cell = [1]+cell.tolist()+[2]
+        
+        return torch.tensor(cell,dtype=torch.long)
+
+def collate_fn_for_PT_test(data):
+    max_len = max([len(row) for row in data])
+    padded_data = [torch.nn.functional.pad(torch.LongTensor(row), pad=(0, max_len-len(row)), mode='constant', value=0) for row in data]
+    stacked_data = torch.stack(padded_data)
+    
+    return stacked_data
