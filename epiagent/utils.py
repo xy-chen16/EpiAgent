@@ -308,7 +308,7 @@ def generate_adata_for_RDI(adata,
                 G = ot.emd(weights_A, weights_B, M_tensor, numItermax=2000000)
                 
                 # Find the best matches (columns in G corresponding to embeddings_B)
-                match_idx = torch.max(G, dim=0)[1].numpy()
+                match_idx = torch.max(G, dim=1)[1].numpy()
 
                 # Calculate the matching distances for further filtering
                 matched_distances = np.array([M[i, match_idx[i]] for i in range(len(match_idx))])
