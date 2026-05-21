@@ -120,7 +120,7 @@ class CellDatasetForUFE(Dataset):
         max_length=8192,
         alpha_for_CCA=1,
         num_cCRE=1355445,
-        is_random=False
+        is_random=True
     ):
         self.adata = adata.copy()
         self.adata.X[self.adata.X>0] = 1.
@@ -764,7 +764,7 @@ class CellDatasetForDI(Dataset):
         max_length=8192,
         alpha_for_CCA=1,
         num_cCRE=1355445,
-        is_random=False
+        is_random=True
     ):
         self.adata = adata.copy()
         self.max_length = max_length
@@ -980,7 +980,7 @@ class CellDatasetForRDI(Dataset):
                  max_length=8192, 
                  alpha_for_CCA=1, 
                  num_cCRE=1355445, 
-                 is_random=False, 
+                 is_random=True, 
                  batch_ids=None):
         self.max_length = max_length
         self.is_random = is_random
@@ -1219,7 +1219,7 @@ class TestCellDatasetForRDI(Dataset):
     def __init__(self, 
                  cell_sentences, 
                  max_length=8192, 
-                 is_random=False, 
+                 is_random=True, 
                  batch_ids=None):
         self.max_length = max_length
         self.is_random = is_random
@@ -1398,7 +1398,7 @@ def collate_fn_for_PT_train(data):
     return stacked_data,torch.stack([row[1] for row in data]),[row[2] for row in data],torch.tensor(np.concatenate([row[3] for row in data]),dtype=torch.float)
 
 class TestCellDatasetForPT(Dataset):
-    def __init__(self, adata, max_cell_length=8192,peak_num=1355445, is_random=False, pert_to_index=None):
+    def __init__(self, adata, max_cell_length=8192,peak_num=1355445, is_random=True, pert_to_index=None):
         self.cell_indeces = [np.fromstring(instance.strip('[]'), sep=',') for instance in adata.obs['cell_indices']]
         self.condition = adata.obs['perturbation'].tolist()
         self.max_cell_length = max_cell_length
