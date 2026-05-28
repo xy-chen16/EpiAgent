@@ -20,6 +20,7 @@ Although single-cell assay for transposase-accessible chromatin using sequencing
 - **2025.08.09**: **EpiAgent** has been officially accepted for publication in Nature Methods! 🎉
 - **2025.09.09**: Released the full database used for pretraining and downstream applications as the ensemble resource Human-scATAC-Corpus, comprising >5.4 million cells across 37 tissue or cell lines. The database is publicly available at [health.tsinghua.edu.cn/human-scatac-corpus](https://health.tsinghua.edu.cn/human-scatac-corpus).
 - **2025.09.25**: Our paper has been officially **published online in [Nature Methods]** 🎉 ([link](https://www.nature.com/articles/s41592-025-02822-z)). Meanwhile, the preprint of our database **Human-scATAC-Corpus** is now available on bioRxiv. Read the preprint [here](https://www.biorxiv.org/content/10.1101/2025.09.05.674505v1).
+- **2026.05.28**: Updated `cCRE_frequency.npy` to fix a scale issue that may affect data imputation but does not affect other workflows. Added a new [`reproducibility`](https://github.com/xy-chen16/EpiAgent/tree/main/reproducibility) folder for code related to reproducing paper results. We also provided the datasets and labels used for inter-dataset annotation experiments [here](https://drive.google.com/drive/folders/16YZP-gdMkHm4vYSQLYUTGo1dTAwLc6n7?usp=share_link), and opened a dedicated [GitHub issue](https://github.com/xy-chen16/EpiAgent/issues/12) for centralized reproducibility discussions and Q&A.
 ---
 
 ## Installation
