@@ -5,6 +5,30 @@ import pandas as pd
 from scipy.sparse import csr_matrix
 from scipy.sparse import coo_matrix
 
+def construct_cell_by_ccre_matrix_from_fragments_tokens(
+    fragments_tokens: dict[str, list[int]],
+    num_ccre: int,
+) -> AnnData:
+    """
+    Constructs a cell-by-cCRE matrix from fragment tokens.
+
+    Args:
+        fragments_tokens (dict): A dictionary mapping cell barcodes to lists of cCRE token indices.
+        num_ccre (int): The number of cCREs.
+    Returns:
+        AnnData: An AnnData object containing the cell-by-cCRE matrix.
+    """
+    ncells = len(set(fragments_tokens.keys()))
+    mat = np.zeros((ncells, num_ccre), dtype=np.int8)
+    for i, (_, tokens) in enumerate(fragments_tokens.items()):
+        mat[i, tokens] += 1
+    
+    mat = csr_matrix(mat)
+    obs_names = pd.DataFrame(index=pd.Index(list(fragments_tokens.keys()), name="cell_barcode"))
+    var = pd.DataFrame(index=pd.Index([f"cCRE_{i}" for i in range(num_ccre)], name="cCRE_id"))
+    return AnnData(X=mat, obs=obs_names, var=var)
+
+
 def construct_cell_by_ccre_matrix(intersect_file, ccre_bed_path):
     """
     Constructs a cell-by-cCRE matrix from intersect results and cCRE definitions.
