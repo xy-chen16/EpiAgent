@@ -401,7 +401,7 @@ def fine_tune_epiagent_for_OSP(
     model,
     classifier_model,
     train_dataloader,
-    num_steps=500000,
+    num_steps=2000000,
     save_dir='../model/fine_tune/OSP/demo_dataset/',
     device=None,
     learning_rate=4e-5,
